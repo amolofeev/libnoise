@@ -4,3 +4,4 @@ build/
 
 libnoise.cpp
 *.so
+*.bmp
