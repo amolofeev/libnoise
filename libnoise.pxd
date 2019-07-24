@@ -24,6 +24,8 @@ ctypedef char int8
 cdef extern from 'noise/noise.h' namespace 'noise::module':
     cdef cppclass Module:
         Module()
+        int GetSourceModuleCount () const
+        void SetSourceModule (int index, const Module& sourceModule)
 
     cdef cppclass Perlin(Module):
         Perlin()
@@ -38,12 +40,23 @@ cdef extern from 'noise/noise.h' namespace 'noise::module':
         void 	EnableDistance (bool enable=True)
         double 	GetDisplacement () const
         double 	GetFrequency () const
-        int GetSourceModuleCount () const
         int GetSeed () const
         bool IsDistanceEnabled () const
         double GetValue (double x, double y, double z) const
         void SetDisplacement (double displacement)
         void SetFrequency (double frequency)
+        void SetSeed (int seed)
+
+    cdef cppclass Turbulence(Module):
+        Turbulence ()
+        double GetFrequency () const
+        double GetPower () const
+        int GetRoughnessCount () const
+        int GetSeed () const
+        double GetValue (double x, double y, double z) const
+        void SetFrequency (double frequency)
+        void SetPower (double power)
+        void SetRoughness (int roughness)
         void SetSeed (int seed)
 
 

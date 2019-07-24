@@ -7,6 +7,7 @@ Currently, there were implemented (more or less):
     noise::module::Module
         noise::module::Perlin
         noise::module::Voronoi
+        noise::module::Turbulence
     
     noise::utils::NoiseMap
     noise::utils::NoiseMapBuilderPlane
